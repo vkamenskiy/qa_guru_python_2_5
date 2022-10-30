@@ -5,7 +5,7 @@ import os
 
 def test_path(relative_path):
     abspath = os.path.abspath(relative_path)
-    return abspathp
+    return abspath
 
 
 def test_submit_student_registration_form():
