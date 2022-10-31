@@ -3,7 +3,7 @@ from selene import have, command
 import os
 
 
-def test_path(relative_path):
+def abs_path_from_project_root(relative_path):
     abspath = os.path.abspath(relative_path)
     return abspath
 
@@ -27,7 +27,7 @@ def test_submit_student_registration_form():
     browser.element('#react-select-2-option-0').click()
     browser.element('#hobbies-checkbox-1').perform(command.js.click)
     browser.element('#hobbies-checkbox-3').perform(command.js.click)
-    browser.element('#uploadPicture').send_keys(test_path('../resources/test_pictures.webp'))
+    browser.element('#uploadPicture').send_keys(abs_path_from_project_root('../resources/test_pictures.webp'))
     browser.element('#currentAddress').type('Moscow Novotushinskiy proezd 8')
     browser.element('[id="state"] [class~="css-19bqh2r"]').click()
     browser.element('#react-select-3-option-1').click()
